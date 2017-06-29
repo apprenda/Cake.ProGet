@@ -91,3 +91,8 @@ packages
 Thumbs.db
 *.orig
 BuildArtifacts/
+
+# Example output
+examples/*/tools/
+examples/*/*.upack
+examples/*/*.zip
