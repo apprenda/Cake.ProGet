@@ -3,15 +3,15 @@
   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <id>Cake.ProGet</id>
     <version>0.0.0</version>
-    <authors>Kyle Camp</authors>
-    <owners>Kyle Camp, cake-contrib</owners>
+    <authors>Apprenda, Inc.</authors>
+    <owners>Apprenda, Inc.</owners>
     <description>Cake ProGet Addin.</description>
-    <summary>A set of aliases for Cake to help with running ProGet scripts as part of a build.</summary>
-    <licenseUrl>https://github.com/cake-contrib/Cake.ProGet/blob/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/cake-contrib/Cake.ProGet/</projectUrl>
+    <summary>A set of aliases for Cake to help with with publishing assets and artifacts to Inedo ProGet as part of a build.</summary>
+    <licenseUrl>https://github.com/apprenda/Cake.ProGet/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/apprenda/Cake.ProGet/</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <copyright>Copyright (c) Cake Contributions 2017 - Present</copyright>
+    <copyright>Copyright (c) Apprenda, Inc. 2017 - Present</copyright>
     <tags>Cake, Script, Build, ProGet, Addin, upack</tags>
   </metadata>
   <files>
