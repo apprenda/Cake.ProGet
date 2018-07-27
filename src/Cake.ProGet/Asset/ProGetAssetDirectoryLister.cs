@@ -31,7 +31,7 @@ namespace Cake.ProGet.Asset
         /// <exception cref="CakeException">Thrown if authorization fails.</exception>
         public void CreateDirectory(string directoryUri)
         {
-            var client = new HttpClient();
+            var client = _configuration.CreateClient();
             _configuration.Apply(client);
             
             var result = client.SendAsync(new HttpRequestMessage(HttpMethod.Post, directoryUri)).Result;
@@ -51,7 +51,7 @@ namespace Cake.ProGet.Asset
         /// <exception cref="CakeException">Throws if authorization fails.</exception>
         public List<ProGetDirectoryListing> ListDirectory(string directoryUri, bool recursive = false)
         {
-            var client = new HttpClient();
+            var client = _configuration.CreateClient();
             _configuration.Apply(client);
 
             var result = client

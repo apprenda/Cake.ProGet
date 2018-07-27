@@ -36,7 +36,7 @@ namespace Cake.ProGet.Asset
         /// <returns>True, if the asset is found. False otherwise.</returns>
         public bool DoesAssetExist(string assetUri)
         {
-            var client = new HttpClient();
+            var client = _configuration.CreateClient();
             _configuration.Apply(client);
 
             var result = client.SendAsync(new HttpRequestMessage(HttpMethod.Head, assetUri)).Result;
@@ -66,7 +66,7 @@ namespace Cake.ProGet.Asset
         /// <returns>True, if the asset is deleted. False otherwise.</returns>
         public bool DeleteAsset(string assetUri)
         {
-            var client = new HttpClient();
+            var client = _configuration.CreateClient();
             _configuration.Apply(client);
 
             var result = client.SendAsync(new HttpRequestMessage(HttpMethod.Delete, assetUri)).Result;
@@ -100,7 +100,7 @@ namespace Cake.ProGet.Asset
 
             if (new FileInfo(asset.FullPath).Length < ChunkSize)
             {
-                var client = new HttpClient();
+                var client = _configuration.CreateClient();
                 _configuration.Apply(client);
                 var result = client.PutAsync(new Uri(uri), new StreamContent(File.OpenRead(asset.FullPath))).Result;
                 if (result.IsSuccessStatusCode)
