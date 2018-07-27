@@ -25,5 +25,10 @@ namespace Cake.ProGet.Asset
         /// The request timeout.
         /// </value>
         public TimeSpan? RequestTimeout { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether defaultcredentials (executing user) used for authenticating against ProGet
+        /// </summary>
+        public bool UseDefaultCredentials { get; set; }
     }
 }

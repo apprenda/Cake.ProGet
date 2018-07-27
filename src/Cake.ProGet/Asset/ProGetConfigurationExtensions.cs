@@ -38,5 +38,19 @@ namespace Cake.ProGet.Asset
                 request.Timeout = (int)config.RequestTimeout.Value.TotalMilliseconds;
             }
         }
+
+        internal static HttpClient CreateClient(this ProGetConfiguration config)
+        {
+            HttpClient client;
+            if (config.UseDefaultCredentials)
+            {
+                var messageHandler = new HttpClientHandler();
+                messageHandler.UseDefaultCredentials = true;
+                client = new HttpClient(messageHandler);
+                return client;
+            }
+            client = new HttpClient();
+            return client;
+        }
     }
 }

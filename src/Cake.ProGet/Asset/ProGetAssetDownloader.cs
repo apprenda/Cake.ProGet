@@ -26,7 +26,7 @@ namespace Cake.ProGet.Asset
 
         public void GetSingleAsset(string assetUri, FilePath outputPath)
         {
-            var client = new HttpClient();
+            var client = _configuration.CreateClient();
             _configuration.Apply(client);
 
             var response = client.GetAsync(assetUri).Result;
@@ -51,7 +51,7 @@ namespace Cake.ProGet.Asset
 
         public void GetDirectoryOfAssets(string assetDirectoryUri, FilePath outputPath)
         {
-            var client = new HttpClient();
+            var client = _configuration.CreateClient();
             _configuration.Apply(client);
             
             var response = client.GetAsync($"{assetDirectoryUri}?format=zip&recursive=true").Result;
